@@ -24,13 +24,14 @@ if __name__ == "__main__":
 		result = CalculadoraHija.multiply(operando1, operando2)
 	elif sys.argv[2] == "divide":
 		if sys.argv[3] == "0":
-			print("Division by zero is not allowed")
+			result = "Division by zero is not allowed"
+			
 		else:
-			result = CalculadoraHija.division(operando1, 								operando2)
-	"Quiero saber si esto puedo implementar directamente la calculadora sin tener que repetir codigo"
-	elif sys.argv[2] == 'suma':
+			result = CalculadoraHija.division(operando1, operando2)
+	#Quiero saber si esto puedo implementar directamente la calculadora sin tener que repetir codigo
+	elif sys.argv[2] == "suma":
 		result = Calculadora.plus(operando1, operando2)
-	elif sys.argv[2] == 'resta':
+	elif sys.argv[2] == "resta":
 		result = Calculadora.minus(operando1, operando2)
 	print(result)
 	
