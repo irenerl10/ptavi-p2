@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import csv
+import sys
 
-with open('fichero.csv', newline='') as file:
-	reader = csv.reader(File)
-	for line in reader:
-		print(row)
+with open(sys.argv[1], newline='') as csv_archivo:
+	entrada = csv.reader(csv_archivo)
+	for line in entrada:
+		print(line)
