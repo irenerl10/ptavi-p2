@@ -11,7 +11,10 @@ class CalculadoraHija:
 
 	def division(op1, op2):
 		"Function to division the operants"
-		return op1 / op2
+		try:
+			return op1 / op2
+		except ZeroDivisionError:
+			print('Division by zero is not allowed')
 
 if __name__ == "__main__":
 	try:
@@ -23,11 +26,7 @@ if __name__ == "__main__":
 	if sys.argv[2] == "multiplica":
 		result = CalculadoraHija.multiply(operando1, operando2)
 	elif sys.argv[2] == "divide":
-		if sys.argv[3] == "0":
-			result = "Division by zero is not allowed"
-			
-		else:
-			result = CalculadoraHija.division(operando1, operando2)
+		result = CalculadoraHija.division(operando1, operando2)
 	#Quiero saber si esto puedo implementar directamente la calculadora sin tener que repetir codigo
 	elif sys.argv[2] == "suma":
 		result = Calculadora.plus(operando1, operando2)
