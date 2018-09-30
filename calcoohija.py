@@ -10,7 +10,7 @@ class CalculadoraHija:
 		self.op1 = op1
 		self.op2 = op2
 
-	def multiply(op1, op2):
+	def multiply(self):
 		return self.op1 * self.op2
 
 	def division(self):
