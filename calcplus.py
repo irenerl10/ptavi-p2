@@ -7,27 +7,24 @@ from calcoohija import CalculadoraHija
 
 infile= open(sys.argv[1], 'r')
 
-operadores = []
-operandos = []
 
 for line in infile:
-	operadores.insert(0,line[:line.find(",")])
-	operandos.insert(0,line[:line.find(' ')].split(',')[1:])
-print(operadores)
-print('xxxxxxxxxxxxxxxxxxxxxxxxxx')
-print(operandos)
+	operador = line.split(',')[0]
+	operandos = line.split(',')[1:]
+	result = int(operandos[1])
+	for op in operandos[2:]:
+		#no se porque no me lee el primer operando
+		#las operaciones se hacen bien pero falta el primero
+		#acordarse de mirar calcoohija en division 0 none
+		if operador == 'suma':
+			result = Calculadora(result, int(op)).plus()
+		elif operador == 'resta':
+			result = Calculadora(result, int(op)).minus()
+		elif operador == 'multiplica':
+			result = CalculadoraHija(result, int(op)).multiply()
+		elif operador == 'divide':
+			result = CalculadoraHija(result, int(op)).division()
 
-if __name__ == "__main__":
-	try:
-		suma = operadores[0]
-		resta = operadores[1]
-		multiplica = operadores[2]
-		divide = operadores[3]
-	except ValueError:
-		sys.exit("Error: Non numerical parameters")
+	print(result)
 
 	
-
-	
-	
-
