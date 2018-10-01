@@ -17,8 +17,7 @@ class CalculadoraHija:
 		try:
 			return self.op1 / self.op2
 		except ZeroDivisionError:
-			print('Division by zero is not allowed')
-			#necesito quitar que result no me devuelva none
+			return 'Division by zero is not allowed'
 
 if __name__ == "__main__":
 	try:
